@@ -15,7 +15,24 @@ class BlogCell : UICollectionViewCell{
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        let textLabel : UILabel = {
+            let label = UILabel()
+            label.text = "test"
+            return label
+        }()
+        
+        addSubview(textLabel)
+        
         backgroundColor = .yellow
+        
+        // Add constraints for textlabel to stick on bottom, top, left and right
+        textLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        textLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        textLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+        // set translate auto sizing constraints to false
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder) {
