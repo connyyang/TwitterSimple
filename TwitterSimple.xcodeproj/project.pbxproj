@@ -13,6 +13,7 @@
 		AEB1C2A21E63CF0300C992A4 /* TwitterSimple.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C2A01E63CF0300C992A4 /* TwitterSimple.xcdatamodeld */; };
 		AEB1C2A41E63CF0300C992A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB1C2A31E63CF0300C992A4 /* Assets.xcassets */; };
 		AEB1C2A71E63CF0300C992A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB1C2A51E63CF0300C992A4 /* LaunchScreen.storyboard */; };
+		AEB1C2B11E63D22400C992A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB1C2B01E63D22400C992A4 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AEB1C2A31E63CF0300C992A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB1C2A61E63CF0300C992A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB1C2A81E63CF0300C992A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEB1C2B01E63D22400C992A4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB1C2991E63CF0300C992A4 /* AppDelegate.swift */,
+				AEB1C2B01E63D22400C992A4 /* HomeViewController.swift */,
 				AEB1C29B1E63CF0300C992A4 /* ViewController.swift */,
 				AEB1C29D1E63CF0300C992A4 /* Main.storyboard */,
 				AEB1C2A31E63CF0300C992A4 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 				AEB1C29C1E63CF0300C992A4 /* ViewController.swift in Sources */,
 				AEB1C29A1E63CF0300C992A4 /* AppDelegate.swift in Sources */,
 				AEB1C2A21E63CF0300C992A4 /* TwitterSimple.xcdatamodeld in Sources */,
+				AEB1C2B11E63D22400C992A4 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
