@@ -10,7 +10,18 @@ import UIKit
 
 private let blogCell = "blogCell"
 
+class BlogCell : UICollectionViewCell{
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        backgroundColor = .yellow
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -23,7 +34,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.backgroundColor = .white
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: blogCell)
+        self.collectionView!.register(BlogCell.self, forCellWithReuseIdentifier: blogCell)
 
         // Do any additional setup after loading the view.
     }
@@ -34,7 +45,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: blogCell, for: indexPath)
-        cell.backgroundColor = .blue
+        //cell.backgroundColor = .blue
         return cell
     }
     
