@@ -83,11 +83,22 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCell, for: indexPath)
             header.backgroundColor = .blue
-//            var headerLabel : UILabel{
-//               let hLabel = UILabel()
-//                hLabel.text = "Header"
-//                return hLabel
-//            }
+            
+            // add header label text
+            let headerLabel : UILabel = {
+               let hLabel = UILabel()
+                hLabel.text = "Header"
+                return hLabel
+            }()
+            
+            header.addSubview(headerLabel)
+            
+            headerLabel.topAnchor.constraint(equalTo: header.topAnchor).isActive = true
+            headerLabel.leftAnchor.constraint(equalTo: header.leftAnchor).isActive = true
+            headerLabel.rightAnchor.constraint(equalTo: header.rightAnchor).isActive = true
+            headerLabel.bottomAnchor.constraint(equalTo: header.bottomAnchor).isActive = true
+            
+            headerLabel.translatesAutoresizingMaskIntoConstraints = false
             
             return header
         }
