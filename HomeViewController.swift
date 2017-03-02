@@ -9,6 +9,8 @@
 import UIKit
 
 private let blogCell = "blogCell"
+private let headerCell = "headerCell"
+private let footerCell = "footerCell"
 
 class BlogCell : UICollectionViewCell{
 
@@ -52,6 +54,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         // Register cell classes
         self.collectionView!.register(BlogCell.self, forCellWithReuseIdentifier: blogCell)
+        
+        // Register cell header
+        self.collectionView?.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerCell)
+        
+        // Register cell footer
+        self.collectionView?.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerCell)
 
         // Do any additional setup after loading the view.
     }
@@ -68,5 +76,34 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 50)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionHeader
+        {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerCell, for: indexPath)
+            header.backgroundColor = .blue
+//            var headerLabel : UILabel{
+//               let hLabel = UILabel()
+//                hLabel.text = "Header"
+//                return hLabel
+//            }
+            
+            return header
+        }
+        else
+        {
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: footerCell, for: indexPath)
+            footer.backgroundColor = .green
+            return footer
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 50.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 100.0)
     }
 }
